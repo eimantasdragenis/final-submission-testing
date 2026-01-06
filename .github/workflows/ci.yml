@@ -17,11 +17,11 @@ jobs:
         with:
           dotnet-version: '8.0.x'
 
-      - name: Restore
-        run: dotnet restore
+      - name: Restore (main project)
+        run: dotnet restore ./PSEngagementSystem.csproj
 
-      - name: Build
-        run: dotnet build --configuration Release --no-restore
+      - name: Build (main project)
+        run: dotnet build ./PSEngagementSystem.csproj --configuration Release --no-restore
 
-      - name: Test
-        run: dotnet test --configuration Release --no-build --verbosity normal
+      - name: Test (test project)
+        run: dotnet test ./PSEngagmentSystem.tests.csproj --configuration Release --verbosity normal
